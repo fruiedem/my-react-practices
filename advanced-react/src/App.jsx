@@ -2,6 +2,7 @@ import './App.css';
 import './Card.module.css';
 import InfoCard from './InfoCard';
 import ProductCard from './ProductCard';
+import CardLayout from './CardLayout';
 /*
 InfoCard.jsx
 1단계. InfoCard 컴포넌트 정의 및 props 전달
@@ -12,6 +13,9 @@ InfoCard.jsx
 
 ProductCard.jsx
 6단계. 함수 Props 전달
+
+CardLayout.jsx
+7단계. JSX요소 props 전달
  */
 
 const cardData1 = {
@@ -44,6 +48,31 @@ const product = {
   name: "laptop",
   price: 123.456
 }
+
+const layouts = [
+  {
+    title: "About",
+    elem: <p>Props of Components</p>
+  },
+  {
+    title: "Details",
+    elem: (<ul>
+      <li>Feature A</li>
+      <li>Feature B</li>
+      <li>Feature C</li>
+    </ul>)
+  },
+  {
+    title: "Contact",
+    elem: (
+      <>
+        <p>Email: example@example.com</p>
+        <p>Phone: 123-456-780</p>
+      </>
+    )
+  }
+
+]
 function App() {
   return (
     <>
@@ -52,6 +81,11 @@ function App() {
         {...product}
         formatPrice = {(p) => `$${p.toFixed(2)}`}
       />
+      {layouts.map((p)=>
+        <CardLayout title={p.title}>
+          {p.elem}  {/* JSX요소 props로 전달 */}
+        </CardLayout>
+      )}
     </>
   )
 }
