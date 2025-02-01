@@ -6,6 +6,7 @@ import CardLayout from './CardLayout';
 import withConditionalCard from './withConditionalCard';
 import SimpleCard from './SimpleCard';
 import Button from './Button';
+import Rerendering from './Rerendering';
 /*
 InfoCard.jsx
 1단계. InfoCard 컴포넌트 정의 및 props 전달
@@ -117,8 +118,15 @@ function App() {
       <button 
         onClick={(e)=>{console.log(e.clientX, e.clientY)}}
       >
-        이벤트 객체 확인 테스트
-        </button>
+        이벤트 객체 clientX, clientY 확인 테스트
+      </button>
+      <button 
+        onClick={(e)=>{console.log(e.shiftKey)}}
+      >
+        이벤트 객체 shiftKey 확인 테스트
+      </button>
+      {/* State */}
+      <Rerendering/>
     </>
   )
 }
