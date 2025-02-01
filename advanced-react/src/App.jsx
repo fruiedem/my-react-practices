@@ -4,6 +4,7 @@ import InfoCard from './InfoCard';
 /*
 1단계. InfoCard 컴포넌트 정의 및 props 전달
 2단계. props spreading - 코드 중복 개선
+3단계. props 기본값 설정
  */
 function App() {
   return (
@@ -14,9 +15,6 @@ function App() {
         author="Alice"
       />
       <InfoCard
-        title="React Composition"
-        content="Composition makes your components mor reusable"
-        author="Charlie"
       />
     </>
   )

@@ -1,5 +1,5 @@
 import styles from './Card.module.css';
-const InfoCard = ({title, content, author}) => (
+const InfoCard = ({title="No data", content="No data", author="No data"}) => (
     <div className={styles.card}>
         <h2>{title}</h2>
         <p>{content}</p>
