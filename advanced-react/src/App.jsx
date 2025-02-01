@@ -7,6 +7,7 @@ import withConditionalCard from './withConditionalCard';
 import SimpleCard from './SimpleCard';
 import Button from './Button';
 import Rerendering from './Rerendering';
+import Toggling from './Toggling';
 /*
 InfoCard.jsx
 1단계. InfoCard 컴포넌트 정의 및 props 전달
@@ -24,6 +25,8 @@ CardLayout.jsx
 8단계. 고차 컴포넌트
 
 9단계. 이벤트 핸들러
+
+10단계. useState을 사용한 리렌더링
  */
 
 const cardData1 = {
@@ -125,8 +128,10 @@ function App() {
       >
         이벤트 객체 shiftKey 확인 테스트
       </button>
-      {/* State */}
+      {/* number타입 State로 리렌더링 구현: Count 예제*/}
       <Rerendering/>
+      {/* boolean타입 State로 리렌더링 구현: Toggling 예제*/}
+      <Toggling/>
     </>
   )
 }
