@@ -114,6 +114,11 @@ function App() {
       <Button name="Home"/>
       <Button name="Store"/>
       <Button name="Contact"/>
+      <button 
+        onClick={(e)=>{console.log(e.clientX, e.clientY)}}
+      >
+        이벤트 객체 확인 테스트
+        </button>
     </>
   )
 }
