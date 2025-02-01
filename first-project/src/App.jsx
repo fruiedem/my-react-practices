@@ -6,6 +6,7 @@ import FunctionExpressions from './FunctionExpressions';
 import IsLoggedIn from './lsLoggedIn';
 import userStatus from './UserStatus';
 import Operators from './Operators';
+import ListRendering from './ListRendering';
 import './App.css'; // #root 적용 위치 확인
 function Hello(){
   return <h1>hello</h1>
@@ -34,6 +35,8 @@ function App() {
       {userStatus("admin")}
       <h2>----- 중괄호 표현식과 JSX 활용 : 조건부 렌더링(3) -----</h2>
       <Operators/>
+      <h2>----- 중괄호 표현식과 JSX 활용 : 조건부 렌더링(4) 과 리스트렌더링 -----</h2>
+      <ListRendering/>
     </>
   )
 }
