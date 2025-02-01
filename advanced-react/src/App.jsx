@@ -5,6 +5,7 @@ import ProductCard from './ProductCard';
 import CardLayout from './CardLayout';
 import withConditionalCard from './withConditionalCard';
 import SimpleCard from './SimpleCard';
+import Button from './Button';
 /*
 InfoCard.jsx
 1단계. InfoCard 컴포넌트 정의 및 props 전달
@@ -20,6 +21,8 @@ CardLayout.jsx
 7단계. JSX요소 props 전달
 
 8단계. 고차 컴포넌트
+
+9단계. 이벤트 핸들러
  */
 
 const cardData1 = {
@@ -107,14 +110,10 @@ function App() {
         content="This card is disabled."
         disabled={true}
         />  
-        {/* 이벤트 핸들러 */}
-        <button
-          onClick={handleClick}
-        >Button 1</button>
-        <button
-          onClick={()=>console.log('Event 2: 즉시 실행 함수 호출')}
-        >Button 2
-        </button>
+      {/* 이벤트 핸들러 */}
+      <Button name="Home"/>
+      <Button name="Store"/>
+      <Button name="Contact"/>
     </>
   )
 }
