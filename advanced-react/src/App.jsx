@@ -3,6 +3,8 @@ import './Card.module.css';
 import InfoCard from './InfoCard';
 import ProductCard from './ProductCard';
 import CardLayout from './CardLayout';
+import withConditionalCard from './withConditionalCard';
+import SimpleCard from './SimpleCard';
 /*
 InfoCard.jsx
 1단계. InfoCard 컴포넌트 정의 및 props 전달
@@ -16,6 +18,8 @@ ProductCard.jsx
 
 CardLayout.jsx
 7단계. JSX요소 props 전달
+
+8단계. 고차 컴포넌트
  */
 
 const cardData1 = {
@@ -73,6 +77,8 @@ const layouts = [
   }
 
 ]
+
+const ConditionalSimpleCard = withConditionalCard(SimpleCard)
 function App() {
   return (
     <>
@@ -81,11 +87,23 @@ function App() {
         {...product}
         formatPrice = {(p) => `$${p.toFixed(2)}`}
       />
+      {/* JSX요소 props로 전달 */}
       {layouts.map((p)=>
         <CardLayout title={p.title}>
-          {p.elem}  {/* JSX요소 props로 전달 */}
+          {p.elem}  
         </CardLayout>
       )}
+      {/* 고차 컴포넌트 */}
+      <ConditionalSimpleCard
+        title="Active Card"
+        content="This card is active."
+        disabled={false}
+        />
+      <ConditionalSimpleCard
+        title="Disabled Card"
+        content="This card is disabled."
+        disabled={true}
+        />  
     </>
   )
 }
