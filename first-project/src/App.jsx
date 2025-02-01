@@ -8,10 +8,14 @@ import userStatus from './UserStatus';
 import Operators from './Operators';
 import ListRendering from './ListRendering';
 import InputStyling from './InputStyling';
+import reactLogo from './assets/react.svg';
 import './App.css'; // #root 적용 위치 확인
 function Hello(){
   return <h1>hello</h1>
 }
+const reactLogoAlt = "React Logo"
+console.log(reactLogo); // 개발모드 : /src/assets/react.svg 빌드모드 : /assets/react-CHdo91hT.svg (파일명은 계속 바뀜)
+
 function App() {
 
 
@@ -40,6 +44,13 @@ function App() {
       <ListRendering/>
       <h2>JSX속성과 스타일링</h2>
       <InputStyling/>
+      <h2>img 태그의 src 속성</h2>
+      <img
+        src = {reactLogo}
+        alt = {reactLogoAlt}
+        width={256}
+        height={228}
+      />
     </>
   )
 }
