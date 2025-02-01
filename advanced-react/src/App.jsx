@@ -80,6 +80,9 @@ const layouts = [
 
 const ConditionalSimpleCard = withConditionalCard(SimpleCard)
 function App() {
+  function handleClick(){
+    console.log('Event 1: 함수 호출');
+  }
   return (
     <>
       {cardData.map(cardData => <InfoCard key={cardData.idx} {...cardData}/>)}
@@ -104,6 +107,14 @@ function App() {
         content="This card is disabled."
         disabled={true}
         />  
+        {/* 이벤트 핸들러 */}
+        <button
+          onClick={handleClick}
+        >Button 1</button>
+        <button
+          onClick={()=>console.log('Event 2: 즉시 실행 함수 호출')}
+        >Button 2
+        </button>
     </>
   )
 }
